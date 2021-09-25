@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run dev --prefix backend & npm run start --prefix frontend"
+    "start": "npm run dev --prefix backend & npm run start --prefix frontend",
+    "open": "./node_modules/.bin/ cypress open",
+    "run": "./node_modules/.bin/ cypress run",
+    "cucu": "cypress run --spec **/*.features"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
 }
