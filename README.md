@@ -1,39 +1,33 @@
-# Accounting Notebook
+# Madison Instructions:
 
-This repository is web application made with ReactJS and NodeJS. Both technologies use Typescript as the programming language.
+---
 
-# Backend
-Backend is an express server with Typescript and it is at `backend` directory.
+Hi Team,
 
-Typescript source code is in src folder.
+Sorry for the delay, it was very busy and crazy week for me, (trip to LA, Prod Issue, so many home assignment ...). It was very straightforward task and was not complicated at all. I spend **3 hours** in 2 days to complete this task.
 
-- `index.ts` file is the main entry point. It will load the complete application.
-- `models` directory define entities.
-- `server` is the express creation module.
-- `sevices` handle business logic.
+Here are the steps that I did to solve this problem.
 
-The tests are in `test` directory. They can be checked runnning `npm run test` at backend directory.
+- [x] Clone GitHub - `FedericoAmura/Agile2020AccountingNotebook`
+- [x] Add `Cypress` and `Cucumber` to the project
+- [x] Create a test input JSON file in the project for your tests
+- [x] Check the postman collection at backend/tests and write an API test with Cypress to post (validate the responses):
+  - [x] 1 credit transaction
+  - [x] 2 debit transactions
+  - [x] 1 invalid transaction
+  - [x] write an API test to check the account balance
 
-### Concurrency solution
-For the case of race conditions, where a transaction is written while some requests are trying to read, coordination of readers and writers, with writing priority has been implemented. It is completely contained in `Account` class (altough, considering that NodeJS executes JS in a single thread it is not really necessary until a database or file saving system is added)
+- [x] write an e2e test with Cucumber that:
+  - [x] opens the app UI
+  - [x] go to the 2nd debit transaction
+  - [x] get amount and date:
+  - [x] compare the amount with the test input value used by the previous test
+  - [x] compare the date with today’s date
 
-### Postman
-A postman collection is at backend/tests if manual testing is desired.
+# Run the Test
+- Go to root of the application and run the project `$ npm run start`
+- Then run the Cypress test with `$ npm run cypress:run` or `$ npm run cypress:open` to run manually.
 
-# Frontend
-Frontend is a ReactJS application written in Typescript. It is just a simple component that retrieves the transaction list from backend and displays it on the main page.
-Components were written with Storybook, and Material Design basic components have been used.
+# Result
 
-# Installation, testing & running
-For instalation NodeJS is needed. Every command is relative to the main directory of the project.
-
-Dependencies are included in repository so no extra installation might be required. They were installed using node 14.13.1 in a x86_64 ubuntu 20.04 system. Compatibility issues might emerge if using a different setup, if that's the case, delete `frontend/node_modules` and `backend/node_modules` folders and run the following commands.
-- To install backend dependencies run `npm install` at backend
-- To install frontend dependencies run `npm install` at frontend
-
-- To check backend tests run `npm run test` at backend
-
-- To start backend run `npm run dev` at backend
-- To start frontend run `npm run start` at frontend
-
-- To start both systems with only one command, at root, run `npm run start` at root directory.
+![alt](./Snapshot.gif)
