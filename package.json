@@ -5,8 +5,7 @@
   "scripts": {
     "start": "npm run dev --prefix backend & npm run start --prefix frontend",
     "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run": "./node_modules/.bin/cypress run",
-    "cucu": "cypress run --spec **/*.features"
+    "cypress:run": "./node_modules/.bin/cypress run --browser chrome --headed && say done"
   },
   "author": "",
   "license": "ISC",
