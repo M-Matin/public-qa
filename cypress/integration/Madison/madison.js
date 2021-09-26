@@ -11,35 +11,42 @@ const compareDates = (date) => {
   return date.trim() === today.trim();
 };
 
+
 const url = 'http://localhost:3000';
-Given('I open Madison page', () => {
+Given('Opens the app UI', () => {
   cy.visit(url);
-  Then(`I see Accounting Notebook in the title`, () => {
+  Then(`Check the Tile`, () => {
     cy.title().should('include', 'Accounting Notebook');
   });
 });
 
-Then('Get the second Debit transaction', () => {
+Given('Access second debit transaction', () => {
+  Then('Compare with user data entry', () => {
   // Select the second debit transaction
-  cy.get('p.transaction-debit').eq(1).click();
-  let amount = '';
-  let date = '';
+    cy.get('p.transaction-debit').eq(1).click();
+    let amount = '';
 
-  cy.get('.transaction-body')
-    .eq(2)
-    .find('p')
-    .eq(1)
-    .then((el) => {
-      amount = parseInt(el.text().split(' ')[1]);
-      expect(amount).to.eq(data.debit[1]);
-    });
-
-  cy.get('.transaction-body')
-    .eq(2)
-    .find('p')
-    .eq(2)
-    .then((el) => {
-      date = el.text().split(' ')[1].substr(0, 10).trim();
-      expect(compareDates(date)).to.eq(true);
-    });
+    cy.get('.transaction-body').eq(2).find('p').eq(1).then((el) => {
+        amount = parseInt(el.text().split(' ')[1]);
+        expect(amount).to.eq(data.debit[1]);
+      });
+  });
 });
+
+
+Given('Access second debit transaction date', () => {
+  Then('Confirm date is equal todays date', () => {
+  // Select the second debit transaction
+    // cy.get('p.transaction-debit').eq(1).click();
+    let date = '';
+
+    cy.get('.transaction-body').eq(2).find('p').eq(2).then((el) => {
+        date = el.text().split(' ')[1].substr(0, 10).trim();
+        expect(compareDates(date)).to.eq(true);
+      });
+  });
+
+});
+
+
+
