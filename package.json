@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "npm run dev --prefix backend & npm run start --prefix frontend",
-    "open": "./node_modules/.bin/ cypress open",
-    "run": "./node_modules/.bin/ cypress run",
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run",
     "cucu": "cypress run --spec **/*.features"
   },
   "author": "",
