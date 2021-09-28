@@ -1,12 +1,6 @@
-# Madison Instructions:
 
----
 
-Hi Team,
-
-Sorry for the delay, it was very busy and crazy week for me, (trip to LA, Prod Issue, so many home assignment ...). It was very straightforward task and was not complicated at all. I spend **3 hours** in 2 days to complete this task.
-
-Here are the steps that I did to solve this problem.
+# Steps to add test to this project
 
 - [x] Clone GitHub - `FedericoAmura/Agile2020AccountingNotebook`
 - [x] Add `Cypress` and `Cucumber` to the project
